@@ -1,0 +1,16 @@
+provider: "anthropic"
+model: "claude-sonnet-4-5"
+api_key: "${ANTHROPIC_API_KEY}"
+api_endpoint: "https://api.anthropic.com/v1"
+tool_calling: true
+
+challenge:
+  version: "1.0"
+  language: "c"
+  boot_method: "grub-multiboot"
+
+harness:
+  max_retries: 3
+  retry_backoff_ms: 1000
+  qemu_timeout_ms: 30000
+  serial_capture_timeout_ms: 10000

@@ -26,8 +26,8 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Test that invalid objects are rejected with descriptive errors
     - _Requirements: 1.5, 5.6_
 
-- [ ] 2. Configuration management
-  - [ ] 2.1 Implement config-manager in `src/core/config-manager.ts`
+- [x] 2. Configuration management
+  - [x] 2.1 Implement config-manager in `src/core/config-manager.ts`
     - Load and parse YAML configuration files using Zod schemas
     - Support environment variable interpolation (e.g., `${ANTHROPIC_API_KEY}`)
     - Validate required fields (apiKey, apiEndpoint, provider, model) with clear error messages for missing fields
@@ -35,20 +35,20 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Create `config.template.yaml` with documented fields
     - _Requirements: 1.5, 11.2, 11.3, 11.4, 11.5_
 
-  - [ ]* 2.2 Write property test for configuration serialization round-trip
+  - [x]* 2.2 Write property test for configuration serialization round-trip
     - **Property 3: Configuration serialization round-trip**
     - **Validates: Requirements 1.5**
 
-  - [ ]* 2.3 Write property test for API configuration validation with error reporting
+  - [x]* 2.3 Write property test for API configuration validation with error reporting
     - **Property 26: API configuration validation with error reporting**
     - **Validates: Requirements 11.4, 11.5**
 
-  - [ ] 2.4 Implement path validation utility in `src/core/path-validation.ts`
+  - [x] 2.4 Implement path validation utility in `src/core/path-validation.ts`
     - Validate provider and model-name path components match `^[a-z0-9]+(-[a-z0-9]+)*$`
     - Construct result paths in format `results/{provider}/{model-name}`
     - _Requirements: 10.2, 10.3_
 
-  - [ ]* 2.5 Write property test for provider and model name validation
+  - [x]* 2.5 Write property test for provider and model name validation
     - **Property 25: Provider and model name validation**
     - **Validates: Requirements 10.2, 10.3**
 

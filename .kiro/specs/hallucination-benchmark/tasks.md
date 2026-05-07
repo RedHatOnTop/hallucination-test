@@ -147,8 +147,8 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
 - [x] 7. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 8. Session recording
-  - [ ] 8.1 Implement session recorder in `src/recording/session-recorder.ts`
+- [x] 8. Session recording
+  - [x] 8.1 Implement session recorder in `src/recording/session-recorder.ts`
     - Start sessions with unique IDs and config (minus apiKey)
     - Record messages, file changes, tool calls, and gate results with timestamps
     - Record checkpoints at each state transition
@@ -156,7 +156,7 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Finalize sessions with completion timestamp and totals
     - _Requirements: 1.4, 4.11, 9.5_
 
-  - [ ]* 8.2 Write property test for session recording completeness and ordering
+  - [x]* 8.2 Write property test for session recording completeness and ordering
     - **Property 2: Session recording completeness and ordering**
     - **Validates: Requirements 1.4, 9.5**
 

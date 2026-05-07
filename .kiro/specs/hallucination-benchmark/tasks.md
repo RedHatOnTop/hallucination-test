@@ -160,15 +160,15 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - **Property 2: Session recording completeness and ordering**
     - **Validates: Requirements 1.4, 9.5**
 
-- [ ] 9. State machine and orchestrator
-  - [ ] 9.1 Implement state machine in `src/core/state-machine.ts`
+- [x] 9. State machine and orchestrator
+  - [x] 9.1 Implement state machine in `src/core/state-machine.ts`
     - Define all workflow states: Initializing, EnvironmentCheck, WorkspaceSetup, PlanningPhase, ImplementationPhase (with sub-phases), IntermediateVerification, FinalVerification, ResultCollection, Analysis, Publishing, Failed
     - Implement deterministic state transitions
     - Persist state to checkpoint file on each transition
     - Support resume from any checkpointed state
     - _Requirements: 8.1, 8.4_
 
-  - [ ] 9.2 Implement orchestrator in `src/core/orchestrator.ts`
+  - [x] 9.2 Implement orchestrator in `src/core/orchestrator.ts`
     - Coordinate initialization: validate environment dependencies (cross-compiler, QEMU, disk tools)
     - Set up workspace with skeleton code and Challenge AGENTS.md
     - Drive conversation loop: send prompts, receive responses, apply file operations
@@ -179,23 +179,23 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Support running multiple tests for same model
     - _Requirements: 1.1, 1.6, 1.7, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 9.6_
 
-  - [ ]* 9.3 Write property test for retry behavior correctness
+  - [x]* 9.3 Write property test for retry behavior correctness
     - **Property 4: Retry behavior correctness**
     - **Validates: Requirements 1.6**
 
-  - [ ]* 9.4 Write property test for completion declaration detection
+  - [x]* 9.4 Write property test for completion declaration detection
     - **Property 21: Completion declaration detection**
     - **Validates: Requirements 8.2**
 
-  - [ ]* 9.5 Write property test for checkpoint and resume correctness
+  - [x]* 9.5 Write property test for checkpoint and resume correctness
     - **Property 22: Checkpoint and resume correctness**
     - **Validates: Requirements 8.4**
 
-  - [ ]* 9.6 Write property test for multi-run result aggregation
+  - [x]* 9.6 Write property test for multi-run result aggregation
     - **Property 23: Multi-run result aggregation**
     - **Validates: Requirements 8.5**
 
-  - [ ]* 9.7 Write property test for tool permission enforcement
+  - [x]* 9.7 Write property test for tool permission enforcement
     - **Property 24: Tool permission enforcement**
     - **Validates: Requirements 9.6**
 

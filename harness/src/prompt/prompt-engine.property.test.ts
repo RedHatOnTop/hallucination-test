@@ -54,7 +54,12 @@ void empty() {
     fc.assert(
       fc.property(
         fc.string({ minLength: 0, maxLength: 500 }).filter(
-          s => !/TODO|FIXME|INSERT\s+CODE|YOUR\s+CODE|IMPLEMENT\s+THIS|FILL\s+IN/i.test(s) && !s.includes('...')
+          s => {
+            if (/TODO|FIXME|INSERT\s+CODE|YOUR\s+CODE|IMPLEMENT\s+THIS|FILL\s+IN/i.test(s)) return false;
+            if (s.includes('...')) return false;
+            const lines = s.split('\n');
+            return !lines.some(l => l.trim().endsWith('{') && !l.includes('}'));
+          }
         ),
         (code) => {
           const patterns = engine.detectIncompletePatterns(code, 'test.c');

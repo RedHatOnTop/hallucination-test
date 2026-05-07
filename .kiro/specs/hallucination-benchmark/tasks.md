@@ -292,43 +292,43 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - **Property 17: Plagiarism flagging threshold**
     - **Validates: Requirements 6.5**
 
-- [ ] 15. Checkpoint - Ensure all tests pass
+- [x] 15. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 16. Result publishing
-  - [ ] 16.1 Implement result publisher in `src/publishing/result-publisher.ts`
+- [x] 16. Result publishing
+  - [x] 16.1 Implement result publisher in `src/publishing/result-publisher.ts`
     - Generate per-model markdown reports with summary, per-category breakdown, phase scores, hallucination highlights (top 5 by confidence)
     - Generate cross-model comparison table with all required columns
     - Update comparison table and rankings when new results are added (preserving existing entries)
     - Store results in `results/{provider}/{model-name}/` directory structure
     - _Requirements: 7.1, 7.2, 7.3, 7.5, 7.6, 10.2, 10.4_
 
-  - [ ] 16.2 Create markdown report templates in `src/publishing/templates/`
+  - [x] 16.2 Create markdown report templates in `src/publishing/templates/`
     - Model report template with all required sections
     - Comparison table template
     - Session record browsable format template
     - _Requirements: 7.1, 7.2, 7.3_
 
-  - [ ] 16.3 Implement static site generation in `src/publishing/static-site/`
+  - [x] 16.3 Implement static site generation in `src/publishing/static-site/`
     - Configure Eleventy (11ty) for GitHub Pages-compatible output
     - Create site templates for model reports, comparison dashboard, and session browsing
     - Wire build pipeline to generate static site from results data
     - _Requirements: 7.4_
 
-  - [ ]* 16.4 Write property test for report generation completeness
+  - [x]* 16.4 Write property test for report generation completeness
     - **Property 18: Report generation completeness**
     - **Validates: Requirements 7.1, 7.2**
 
-  - [ ]* 16.5 Write property test for incremental result update preservation
+  - [x]* 16.5 Write property test for incremental result update preservation
     - **Property 19: Incremental result update preservation**
     - **Validates: Requirements 7.5**
 
-  - [ ]* 16.6 Write property test for top-5 hallucination highlight selection
+  - [x]* 16.6 Write property test for top-5 hallucination highlight selection
     - **Property 20: Top-5 hallucination highlight selection**
     - **Validates: Requirements 7.6**
 
-- [ ] 17. CLI interface
-  - [ ] 17.1 Implement CLI entry point in `src/cli/index.ts`
+- [x] 17. CLI interface
+  - [x] 17.1 Implement CLI entry point in `src/cli/index.ts`
     - Define commands: `run`, `resume`, `results`, `report`, `validate`
     - `run`: accept config path, provider, model, output-dir, verbose flags; validate config then start orchestrator
     - `resume`: accept session ID, resume from last checkpoint
@@ -338,19 +338,19 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Wire Commander.js with proper argument parsing and help text
     - _Requirements: 8.7, 11.2, 11.4_
 
-  - [ ]* 17.2 Write unit tests for CLI argument parsing
+  - [x]* 17.2 Write unit tests for CLI argument parsing
     - Test each command with valid and invalid arguments
     - Test error messages for missing required options
     - _Requirements: 8.7_
 
-- [ ] 18. Skeleton code and reference materials
-  - [ ] 18.1 Create skeleton code in `harness/skeleton/`
+- [x] 18. Skeleton code and reference materials
+  - [x] 18.1 Create skeleton code in `harness/skeleton/`
     - Create `Makefile` for i686-elf cross-compilation (model is permitted to modify)
     - Create `linker.ld` with basic kernel memory layout
     - Create `boot/boot.s` with minimal Multiboot-compliant boot stub
     - _Requirements: 2.1, 2.8, 2.9, 2.11_
 
-  - [ ] 18.2 Create reference documents in `harness/references/`
+  - [x] 18.2 Create reference documents in `harness/references/`
     - Create `posix-syscalls.md` with POSIX.1-2017 syscall interface specs (no implementation)
     - Create `posix-filesystem.md` with VFS and file system specs
     - Create `posix-process.md` with process management specs
@@ -358,34 +358,34 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Create `multiboot-spec.md` with Multiboot specification
     - _Requirements: 2.3, 2.5, 6.1, 6.3_
 
-  - [ ] 18.3 Create plagiarism corpus stubs in `harness/corpus/`
+  - [x] 18.3 Create plagiarism corpus stubs in `harness/corpus/`
     - Create `xv6-signatures.json` with code signature format for xv6
     - Create `linux-signatures.json` with code signature format for Linux
     - Create `minix-signatures.json` with code signature format for MINIX
     - _Requirements: 6.4_
 
-- [ ] 19. Checkpoint - Ensure all tests pass
+- [x] 19. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 20. Integration wiring and end-to-end flow
-  - [ ] 20.1 Wire orchestrator to all subsystems
+- [x] 20. Integration wiring and end-to-end flow
+  - [x] 20.1 Wire orchestrator to all subsystems
     - Connect orchestrator → config-manager, state-machine, tool-adapter, prompt-engine, sandbox, quality-gate, scoring-engine, hallucination-detector, plagiarism-detector, session-recorder, result-publisher
     - Implement full workflow: environment check → workspace setup → planning → implementation stages → verification → analysis → publishing
     - Ensure no iteration limit or token budget is imposed on sessions
     - _Requirements: 1.7, 8.1, 8.2, 8.3_
 
-  - [ ] 20.2 Implement environment dependency verification
+  - [x] 20.2 Implement environment dependency verification
     - Check for i686-elf cross-compiler, QEMU (i386 system emulation), disk image tools
     - Provide clear error messages with installation instructions when dependencies are missing
     - _Requirements: 8.6, 2.11_
 
-  - [ ]* 20.3 Write integration tests for end-to-end workflow
+  - [x]* 20.3 Write integration tests for end-to-end workflow
     - Test full workflow with mocked LLM API
     - Test checkpoint save/resume across simulated process restart
     - Test environment validation with missing dependencies
     - _Requirements: 8.1, 8.4, 8.6_
 
-- [ ] 21. Final checkpoint - Ensure all tests pass
+- [x] 21. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

@@ -52,11 +52,11 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - **Property 25: Provider and model name validation**
     - **Validates: Requirements 10.2, 10.3**
 
-- [ ] 3. Checkpoint - Ensure all tests pass
+- [x] 3. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 4. Sandbox implementation
-  - [ ] 4.1 Implement sandbox in `src/sandbox/sandbox.ts`
+- [x] 4. Sandbox implementation
+  - [x] 4.1 Implement sandbox in `src/sandbox/sandbox.ts`
     - Resolve all paths relative to workspace root
     - Block path traversal attacks (`../`, absolute paths, encoded sequences, symlinks)
     - Apply restrictions uniformly across all tool types (read, write, delete, list, mkdir, exec)
@@ -65,15 +65,15 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Execute build commands via execa within sandbox constraints
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 9.1, 9.2, 9.3_
 
-  - [ ]* 4.2 Write property test for sandbox path containment
+  - [x]* 4.2 Write property test for sandbox path containment
     - **Property 27: Sandbox path containment**
     - **Validates: Requirements 12.1, 12.2, 12.5**
 
-  - [ ]* 4.3 Write property test for sandbox violation handling
+  - [x]* 4.3 Write property test for sandbox violation handling
     - **Property 28: Sandbox violation handling**
     - **Validates: Requirements 12.3, 12.4**
 
-  - [ ]* 4.4 Write property test for sandbox uniform enforcement across tool types
+  - [x]* 4.4 Write property test for sandbox uniform enforcement across tool types
     - **Property 29: Sandbox uniform enforcement across tool types**
     - **Validates: Requirements 12.6**
 

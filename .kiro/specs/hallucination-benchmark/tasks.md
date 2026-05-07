@@ -202,8 +202,8 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
 - [x] 10. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 11. Analysis pipeline - Quality gate
-  - [ ] 11.1 Implement quality gate in `src/analysis/quality-gate.ts`
+- [x] 11. Analysis pipeline - Quality gate
+  - [x] 11.1 Implement quality gate in `src/analysis/quality-gate.ts`
     - Run sequential verification: syntax check → build → boot → test suite
     - Syntax check: validate C/C++ source files for parse errors
     - Build check: invoke i686-elf cross-compiler, capture warnings/errors, verify binary generation
@@ -212,14 +212,14 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Record all verification logs to session recorder
     - _Requirements: 4.1, 4.2, 4.3, 4.11_
 
-  - [ ]* 11.2 Write unit tests for quality gate pipeline
+  - [x]* 11.2 Write unit tests for quality gate pipeline
     - Test sequential execution order
     - Test that each stage produces correct GateResult structure
     - Test timeout handling for QEMU
     - _Requirements: 4.1, 4.2, 4.3_
 
-- [ ] 12. Analysis pipeline - Scoring engine
-  - [ ] 12.1 Implement scoring engine in `src/analysis/scoring-engine.ts`
+- [x] 12. Analysis pipeline - Scoring engine
+  - [x] 12.1 Implement scoring engine in `src/analysis/scoring-engine.ts`
     - Compute weighted final score: Build (20%) + Boot (25%) + Functionality (30%) + Consistency (15%) + Originality (10%)
     - Build score: evaluate compilation success, warning count, error count
     - Boot score: evaluate QEMU boot reaching serial output
@@ -228,32 +228,32 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Originality score: deductions based on plagiarism proportion
     - _Requirements: 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10_
 
-  - [ ]* 12.2 Write property test for weighted score computation invariant
+  - [x]* 12.2 Write property test for weighted score computation invariant
     - **Property 7: Weighted score computation invariant**
     - **Validates: Requirements 4.4**
 
-  - [ ]* 12.3 Write property test for build score monotonicity
+  - [x]* 12.3 Write property test for build score monotonicity
     - **Property 8: Build score monotonicity**
     - **Validates: Requirements 4.5**
 
-  - [ ]* 12.4 Write property test for functionality score proportionality
+  - [x]* 12.4 Write property test for functionality score proportionality
     - **Property 9: Functionality score proportionality**
     - **Validates: Requirements 4.7**
 
-  - [ ]* 12.5 Write property test for phase scoring independence
+  - [x]* 12.5 Write property test for phase scoring independence
     - **Property 10: Phase scoring independence**
     - **Validates: Requirements 4.8**
 
-  - [ ]* 12.6 Write property test for consistency score inverse proportionality
+  - [x]* 12.6 Write property test for consistency score inverse proportionality
     - **Property 11: Consistency score inverse proportionality**
     - **Validates: Requirements 4.9**
 
-  - [ ]* 12.7 Write property test for originality score with plagiarism deductions
+  - [x]* 12.7 Write property test for originality score with plagiarism deductions
     - **Property 12: Originality score with plagiarism deductions**
     - **Validates: Requirements 4.10, 6.6**
 
-- [ ] 13. Analysis pipeline - Hallucination detector
-  - [ ] 13.1 Implement hallucination detector in `src/analysis/hallucination-detector.ts`
+- [x] 13. Analysis pipeline - Hallucination detector
+  - [x] 13.1 Implement hallucination detector in `src/analysis/hallucination-detector.ts`
     - Detect non-existent API calls by comparing against POSIX reference documents
     - Detect incorrect syscall numbers against known POSIX values
     - Detect fictitious hardware register addresses
@@ -264,31 +264,31 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Output results in structured JSON format
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6_
 
-  - [ ]* 13.2 Write property test for hallucination classification and severity completeness
+  - [x]* 13.2 Write property test for hallucination classification and severity completeness
     - **Property 13: Hallucination classification and severity completeness**
     - **Validates: Requirements 5.1, 5.2**
 
-  - [ ]* 13.3 Write property test for self-contradiction detection across file versions
+  - [x]* 13.3 Write property test for self-contradiction detection across file versions
     - **Property 14: Self-contradiction detection across file versions**
     - **Validates: Requirements 5.5**
 
-  - [ ]* 13.4 Write property test for hallucination report serialization round-trip
+  - [x]* 13.4 Write property test for hallucination report serialization round-trip
     - **Property 15: Hallucination report serialization round-trip**
     - **Validates: Requirements 5.6**
 
-- [ ] 14. Analysis pipeline - Plagiarism detector
-  - [ ] 14.1 Implement plagiarism detector in `src/analysis/plagiarism-detector.ts`
+- [x] 14. Analysis pipeline - Plagiarism detector
+  - [x] 14.1 Implement plagiarism detector in `src/analysis/plagiarism-detector.ts`
     - Load code signature corpus from `corpus/` directory (xv6, Linux, MINIX signatures)
     - Compare model output against corpus using code similarity measurement
     - Flag blocks with ≥50 contiguous lines AND ≥70% similarity as suspected plagiarism
     - Generate plagiarism report with per-project breakdown
     - _Requirements: 6.2, 6.4, 6.5_
 
-  - [ ]* 14.2 Write property test for code similarity measurement validity
+  - [x]* 14.2 Write property test for code similarity measurement validity
     - **Property 16: Code similarity measurement validity**
     - **Validates: Requirements 6.4**
 
-  - [ ]* 14.3 Write property test for plagiarism flagging threshold
+  - [x]* 14.3 Write property test for plagiarism flagging threshold
     - **Property 17: Plagiarism flagging threshold**
     - **Validates: Requirements 6.5**
 

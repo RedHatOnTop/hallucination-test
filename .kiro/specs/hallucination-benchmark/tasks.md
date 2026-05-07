@@ -104,15 +104,15 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Test error handling for malformed responses
     - _Requirements: 1.2_
 
-- [ ] 6. Prompt system
-  - [ ] 6.1 Implement reference provider in `src/prompt/reference-provider.ts`
+- [x] 6. Prompt system
+  - [x] 6.1 Implement reference provider in `src/prompt/reference-provider.ts`
     - Load reference documents from `references/` directory
     - Search references by query (keyword matching)
     - Filter out implementation code, providing only specs and interface definitions
     - Return relevant references for each implementation stage
     - _Requirements: 2.5, 6.1, 6.3, 9.4_
 
-  - [ ] 6.2 Implement prompt engine in `src/prompt/prompt-engine.ts`
+  - [x] 6.2 Implement prompt engine in `src/prompt/prompt-engine.ts`
     - Generate planning prompts with challenge context
     - Generate stage-specific implementation prompts using Handlebars templates
     - Detect incomplete code patterns (TODO, stubs, placeholders, empty bodies)
@@ -121,26 +121,26 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - Apply framing strategy that prevents refusal responses
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
 
-  - [ ] 6.3 Create Handlebars prompt templates in `src/prompt/templates/`
+  - [x] 6.3 Create Handlebars prompt templates in `src/prompt/templates/`
     - Create templates for: planning, stage implementation, follow-up, verification, completion check
     - Include tone that encourages best-effort implementation
     - _Requirements: 3.1, 3.5_
 
-  - [ ]* 6.4 Write property test for incomplete code pattern detection
+  - [x]* 6.4 Write property test for incomplete code pattern detection
     - **Property 5: Incomplete code pattern detection**
     - **Validates: Requirements 3.2**
 
-  - [ ]* 6.5 Write property test for three-consecutive-failure area skip
+  - [x]* 6.5 Write property test for three-consecutive-failure area skip
     - **Property 6: Three-consecutive-failure area skip**
     - **Validates: Requirements 3.6**
 
-  - [ ] 6.6 Implement Challenge AGENTS.md generator in `src/prompt/agents-md-generator.ts`
+  - [x] 6.6 Implement Challenge AGENTS.md generator in `src/prompt/agents-md-generator.ts`
     - Generate AGENTS.md with task description, phase breakdown, quality gate criteria, available tools, technical constraints, and persona assignment
     - Ensure no references to hallucination measurement or benchmarking
     - Ensure no language that would cause task refusal
     - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 13.10_
 
-  - [ ]* 6.7 Write property test for Challenge AGENTS.md content validation
+  - [x]* 6.7 Write property test for Challenge AGENTS.md content validation
     - **Property 30: Challenge AGENTS.md content validation**
     - **Validates: Requirements 13.3, 13.8**
 

@@ -77,29 +77,29 @@ Build a CLI-based test harness in TypeScript (Node.js 20+) that orchestrates LLM
     - **Property 29: Sandbox uniform enforcement across tool types**
     - **Validates: Requirements 12.6**
 
-- [ ] 5. Model communication adapters
-  - [ ] 5.1 Implement tool adapter interface and factory in `src/adapters/tool-adapter.ts`
+- [x] 5. Model communication adapters
+  - [x] 5.1 Implement tool adapter interface and factory in `src/adapters/tool-adapter.ts`
     - Define ToolAdapter interface with sendMessage method
     - Implement adapter factory that selects tool-calling or text-marker mode based on config
     - _Requirements: 1.1, 1.2, 1.3_
 
-  - [ ] 5.2 Implement tool-calling adapter in `src/adapters/tool-calling-adapter.ts`
+  - [x] 5.2 Implement tool-calling adapter in `src/adapters/tool-calling-adapter.ts`
     - Send messages with tool definitions using native function calling protocol
     - Parse tool call responses into FileOperation objects
     - Handle token usage tracking
     - _Requirements: 1.2_
 
-  - [ ] 5.3 Implement text-marker adapter in `src/adapters/text-marker-adapter.ts`
+  - [x] 5.3 Implement text-marker adapter in `src/adapters/text-marker-adapter.ts`
     - Parse `<<<FILE: path>>>` markers from text output
     - Extract file operations (create, modify, delete) from marker blocks
     - Handle edge cases (nested markers, malformed markers)
     - _Requirements: 1.3_
 
-  - [ ]* 5.4 Write property test for text marker parsing round-trip
+  - [x]* 5.4 Write property test for text marker parsing round-trip
     - **Property 1: Text marker parsing round-trip**
     - **Validates: Requirements 1.3**
 
-  - [ ]* 5.5 Write unit tests for tool-calling adapter
+  - [x]* 5.5 Write unit tests for tool-calling adapter
     - Test parsing of various API response formats
     - Test error handling for malformed responses
     - _Requirements: 1.2_
